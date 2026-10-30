@@ -1,0 +1,13 @@
+[project]
+name = "08-mle-cross-entropy-kl"
+version = "0.1.0"
+description = "MLE, softmax, cross-entropy and KL: why minimising cross-entropy is maximum likelihood"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "pillow>=13.0.0",
+]
+
+[tool.ruff]
+line-length = 120
