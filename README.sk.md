@@ -1,6 +1,6 @@
 # 08 · MLE, softmax, cross-entropy a KL
 
-🇬🇧 [English version](README.md)
+🇬🇧 [English version](README.md) · 📘 [Tutoriál krok za krokom](TUTORIAL.sk.md)
 
 ## TL;DR
 Matematické minimum pred P4 (GPT od nuly). Cieľ podľa roadmapy: *vysvetliť, prečo minimalizácia cross-entropy = maximálna vierohodnosť (MLE)*. Päť malých experimentov v NumPy (seed 0, každé číslo z `results.json`):

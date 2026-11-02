@@ -1,6 +1,6 @@
 # 08 · MLE, softmax, cross-entropy & KL
 
-🇸🇰 [Slovenská verzia](README.sk.md)
+🇸🇰 [Slovenská verzia](README.sk.md) · 📘 [Step-by-step tutorial](TUTORIAL.md)
 
 ## TL;DR
 The math minimum before P4 (GPT from scratch). Goal from the roadmap: *explain why minimising cross-entropy = maximum likelihood (MLE)*. Five small NumPy experiments (seed 0, every number from `results.json`):
