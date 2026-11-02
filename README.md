@@ -17,6 +17,13 @@ The math minimum before P4 (GPT from scratch). Goal from the roadmap: *explain w
 
 ![Cross-entropy training](assets/ce_training.gif)
 
+## Start here
+Imagine a coin that landed heads 7 times in 10 flips. A sensible estimate of its chance of heads is 7/10. **Maximum likelihood (MLE)** means choosing the model setting under which the observations would be most probable. The first experiment shows why 0.7 wins.
+
+A language model does something similar, except it estimates the probability of the next token instead of a coin flip. It starts with arbitrary scores for possible answers; **softmax** turns them into probabilities. If the correct answer receives a low probability, the model incurs a large error. The average error is called **cross-entropy**. Minimizing it means assigning the actual answers the highest possible probability, which is MLE.
+
+The script verifies these statements numerically, shows how training moves predictions towards observed frequencies, and compares both directions of **KL divergence** (a measure of difference between probability distributions). The animated plot shows error falling. The main lesson is that the loss function gives a precise mathematical reward for probable correct predictions.
+
 ## Problem
 Every language model in P4 is trained by minimising "cross-entropy loss", and makemore in step 04 reported "NLL". Why is that the right loss, and what do the numbers mean? Four ideas are needed:
 1. **Likelihood:** how probable the observed data is under a model, and choosing parameters that maximise it (MLE).

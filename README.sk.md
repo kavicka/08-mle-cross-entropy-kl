@@ -17,6 +17,13 @@ Matematické minimum pred P4 (GPT od nuly). Cieľ podľa roadmapy: *vysvetliť, 
 
 ![Tréning cross-entropy](assets/ce_training.gif)
 
+## Najprv jednoducho
+Predstav si mincu, ktorá padla 7-krát na hlavu z 10 hodov. Rozumný odhad jej šance na hlavu je 7/10. **Maximum likelihood (MLE)** znamená vybrať také nastavenie modelu, pri ktorom by pozorované dáta boli najpravdepodobnejšie. Prvý pokus v skripte ukáže, prečo vyhrá práve 0,7.
+
+Jazykový model robí podobnú vec, len namiesto mince odhaduje pravdepodobnosť ďalšieho tokenu. Najprv má ľubovoľné skóre pre možné odpovede; **softmax** ich premení na pravdepodobnosti. Ak správnej odpovedi priradí malú pravdepodobnosť, dostane veľkú chybu. Priemerná chyba sa volá **cross-entropy**. Minimalizovať ju znamená dávať skutočným odpovediam čo najvyššiu pravdepodobnosť — teda robiť MLE.
+
+Skript tieto tvrdenia overí na číslach, ukáže, ako sa model učením približuje k pozorovaným frekvenciám, a porovná dva smery **KL divergencie** (mieru rozdielu medzi rozdeleniami). Graf animuje pokles chyby. Dôležitý výsledok: výber správnej chybovej funkcie nie je kúzlo, ale spôsob, ako matematicky odmeňovať pravdepodobné správne predpovede.
+
 ## Problém
 Každý jazykový model v P4 sa trénuje minimalizáciou „cross-entropy loss“ a makemore v kroku 04 reportoval „NLL“. Prečo je to správny loss a čo tie čísla znamenajú? Treba štyri myšlienky:
 1. **Vierohodnosť (likelihood):** aké pravdepodobné sú pozorované dáta podľa modelu, a voľba parametrov, ktoré ju maximalizujú (MLE).
